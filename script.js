@@ -6,14 +6,14 @@ const loader = document.getElementById("loader");
 const quoteContainer = document.getElementById("quote-container");
 const twitter = document.getElementById("twitter");
 
-const hiddingTheLoader = () => {
-  quoteContainer.hidden = false;
-  loader.hidden = true;
-};
-const showingTheLoader = () => {
-  quoteContainer.hidden = true;
-  loader.hidden = false;
-};
+// const hiddingTheLoader = () => {
+//   quoteContainer.hidden = false;
+//   loader.hidden = true;
+// };
+// const showingTheLoader = () => {
+//   quoteContainer.hidden = true;
+//   loader.hidden = false;
+// };
 const tweetQuote = () => {
   const twitterQuote = quote.innerText;
   const twitterAuthor = author.innerText;
@@ -22,7 +22,7 @@ const tweetQuote = () => {
 };
 // connect with quote-Api
 async function getQuote() {
-  showingTheLoader();
+//   showingTheLoader();
   const apiUrl = "http://api.quotable.io/random";
   try {
     const response = await fetch(apiUrl);
@@ -34,7 +34,7 @@ async function getQuote() {
     } else {
       quote.classList.remove("bigerthan30");
     }
-    hiddingTheLoader();
+    // hiddingTheLoader();
   } catch (error) {
     console.log(error);
   }
