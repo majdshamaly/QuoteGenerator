@@ -7,10 +7,8 @@ const quoteContainer = document.getElementById("quote-container");
 const twitter = document.getElementById("twitter");
 
 const hiddingTheLoader = () => {
-  if (!loader.hidden) {
-    quoteContainer.hidden = false;
-    loader.hidden = true;
-  }
+  quoteContainer.hidden = false;
+  loader.hidden = true;
 };
 const showingTheLoader = () => {
   quoteContainer.hidden = true;
