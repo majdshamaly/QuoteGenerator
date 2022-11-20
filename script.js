@@ -23,9 +23,15 @@ const tweetQuote = () => {
 // connect with quote-Api
 async function getQuote() {
 //   showingTheLoader();
-  const apiUrl = "http://api.quotable.io/random";
+// const prixyUrl = 'https://cros-anywhare.herokuapp.com/'
+  const apiUrl = 'http://api.quotable.io/random'
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(apiUrl, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin' : '*'
+      }
+    });
     const data = await response.json();
     quote.innerText = data.content;
     author.innerText = data.author;
