@@ -22,15 +22,15 @@ const tweetQuote = () => {
 };
 // connect with quote-Api
 async function getQuote() {
-//   showingTheLoader();
-// const prixyUrl = 'https://cros-anywhare.herokuapp.com/'
-  const apiUrl = 'http://api.quotable.io/random'
+  //   showingTheLoader();
+  // const prixyUrl = 'https://cros-anywhare.herokuapp.com/'
+  const apiUrl = "http://api.quotable.io/random";
+  var headers = {};
   try {
     const response = await fetch(apiUrl, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin' : '*'
-      }
+      method: "GET",
+      mode: "cors",
+      headers: headers,
     });
     const data = await response.json();
     quote.innerText = data.content;
